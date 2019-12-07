@@ -1,2 +1,11 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Movies', movies_path	 %>
+      <%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
+</nav>
+
+
+<%= form_for [@movie, @comment] do |f| %>
+<%= f.text_field :comment, placeholder: "Tell us your thoughts" %>
+<%= f.submit %>
+<% end %>

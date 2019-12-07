@@ -3,19 +3,19 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :edit, :destroy]
 
   def index
-    @comments = @movie.comments
+    @comments = current_user.movies.comments
   end
 
   def show
   end
 
   def edit
-    render partial: 'form'
+    render :edit
   end
 
   def new
-    @comment = @movie.comments.new
-    render :
+    @comment = current_user.movies.comments.new(:movie_id)
+    render :new
   end
 
   def create
@@ -54,5 +54,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body)
   end
-
 end

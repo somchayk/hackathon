@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
-    render partial: 'form'
+    render :new
   end
 
   def create
@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movie_path(@movie.id)
     else
-      render partial: 'form'
+      render :new
     end
   end
 

@@ -11,3 +11,5 @@
 <%= @movie.genre %>
 <%= @movie.description %>
 <%= link_to 'Trailer', @movie.trailer, target: :_blank %>
+<hr />
+<%= button_to 'Add Comment', movie_comments_path(@movie.id) %>
