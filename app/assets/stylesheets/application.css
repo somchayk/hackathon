@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+ @import 'materialize-sass'
+  body {
+   background-color: #92A4B0;
+ }
+ .container {
+   background-color: #E6F5FF;
+   padding: 10px;
+   border: 2px solid #6499BD;
+   border-radius: 10px;
+   margin: 20px;
+ }
+ table {
+   background-color: #D2EBFC !important;
+ }
+ table a {
+   color:#6499BD !important;
+   font-style: italic;
+ }
+ #title_img {
+   width:100%;
+ }
+ .banner {
+   background-color: #6499BD;
+   height: 300px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+ }
+ .banner .title {
+   color: white;
+   background-color: black;
+   opacity: .5;
+   height: 100%;
+   text-align: center;
+   padding-top: 150px;
+   padding-bottom: 150px;
+   font-size: 100px;
+ }
+ .grid img {
+     display: block;
+     margin: 50px;
+     width: 85%;
+     border-radius: 10px;
+   }

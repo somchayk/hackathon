@@ -18,7 +18,6 @@
 <% @movie.comments.each do |c| %>
 <li>
 <%= c.body %>
-<% @comment = c %>
 <%= link_to 'Edit', edit_movie_comment_path(@movie.id) %>
 </li>
 <% end %>

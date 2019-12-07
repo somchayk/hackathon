@@ -6,3 +6,11 @@
 
 
 <h3><%= 'Edit Comment' %></h3>
+
+<%= @comment.body %>
+
+<%= form_for [@movie, @comment] do |f| %>
+<%= f.text_field :body, required: true, placeholder: 'what would you like to say?' %>
+<%= f.submit %>
+<% end %>
+<br />
