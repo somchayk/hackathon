@@ -6,6 +6,6 @@
 
 
 <%= form_for [@movie, @comment] do |f| %>
-<%= f.text_field :comment, placeholder: "Tell us your thoughts" %>
-<%= f.submit %>
+<%= f.text_field :body, placeholder: "Tell us your thoughts" %>
+<%= f.submit nil %>
 <% end %>

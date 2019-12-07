@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :edit, :destroy]
 
   def index
-    @comments = current_user.movies.comments
+    @comments = @movie.comments
   end
 
   def show
@@ -14,14 +14,13 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = current_user.movies.comments.new(:movie_id)
-    render :new
+    @comment = @movie.comments.new
   end
 
   def create
     @comment = @movie.comments.new(comment_params)
     if @comment.save
-      redirect_to [@movie, @comment]
+      redirect_to @movie
     else
       render :new
     end
@@ -29,7 +28,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    reditect_to movie_comment_path(@movie)
+    redirect_to movie_comment_path(@movie)
   end
 
   def update

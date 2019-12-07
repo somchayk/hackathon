@@ -1,2 +1,8 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<nav>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Movies', movies_path	 %>
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
+</nav>
+
+
+<h3><%= 'Edit Comment' %></h3>

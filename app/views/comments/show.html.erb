@@ -1,2 +1,6 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<nav>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Movies', movies_path	 %>
+  <%= link_to 'Edit', edit_movie_path %>
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
+</nav>
