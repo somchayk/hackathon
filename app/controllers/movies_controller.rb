@@ -9,20 +9,20 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    render partial: 'edit'
+    render :edit
   end
 
   def new
     @movie = Movie.new
-    render partial: 'new'
+    render partial: 'form'
   end
 
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.new(movie_params)
     if @movie.save
-      redirect_to movie_path
+      redirect_to movie_path(@movie.id)
     else
-      render :new
+      render partial: 'form'
     end
   end
 
@@ -47,6 +47,6 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :duration)
+    params.require(:movie).permit(:title, :duration, :genre, :description, :trailer)
   end
 end

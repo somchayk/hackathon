@@ -1,2 +1,29 @@
-<h1>Movies#edit</h1>
-<p>Find me in app/views/movies/edit.html.erb</p>
+      <%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
+<nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Movies', movies_path	 %>
+</nav>
+
+
+<h1><%= @movie.id ? '' : 'Movie details' %></h1>
+<%= form_for @movie do |f| %>
+<div class="input-field">
+  <%= f.text_field :title, required: true, placeholder: "Movie name" %>
+</div>
+<div class="input-field">
+  <%= f.text_field :duration, required: true, placeholder: "Movie Length "%>
+</div>
+<div class="input-field">
+  <%= f.text_field :genre, required: false, placeholder: "Genre"%>
+</div>
+<div class="input-field">
+  <%= f.text_field :description, required: true, placeholder: "Give us the details"%>
+</div>
+<div class="input-field">
+  <%= f.text_field :trailer, required: false, placeholder: "Paste URL link here"%>
+</div>
+
+<%= f.submit %>
+<% end %>
+
+<%= button_to 'Delete Movie', @movie, method: :delete %>

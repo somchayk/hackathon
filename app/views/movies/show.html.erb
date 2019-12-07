@@ -1,2 +1,13 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<nav>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Movies', movies_path	 %>
+  <%= link_to 'Edit', edit_movie_path %>
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
+</nav>
+
+
+<h1><%= @movie.title %></h1>
+<%= @movie.duration %>
+<%= @movie.genre %>
+<%= @movie.description %>
+<%= link_to 'Trailer', @movie.trailer, target: :_blank %>

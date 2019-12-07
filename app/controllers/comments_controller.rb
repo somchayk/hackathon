@@ -10,12 +10,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    render :new
+    render partial: 'form'
   end
 
   def new
     @comment = @movie.comments.new
-    render :new
+    render :
   end
 
   def create
@@ -54,5 +54,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body)
   end
-  
+
 end
